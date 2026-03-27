@@ -82,5 +82,36 @@ list(
   tar_target(
     perceptual_model,
     fit_model_perceptual(perceptual_data, weak_prior)
+  ),
+  
+  #### Plot results ----
+  tar_target(
+    performance_plot,
+    plot_performance_model(performance_model, performance_data)
+  ),
+  
+  tar_target(
+    performance_plot_tiff,
+    {
+      performance_plot
+      
+      ggsave(plot = performance_plot, filename = "plots/performance_plot.tiff", device = "tiff", dpi = 300, width = 15, height = 8)
+      
+    }
+  ),
+  
+  tar_target(
+    biochemical_plot,
+    plot_biochemical_model(biochemical_model, biochemical_data)
+  ),
+  
+  tar_target(
+    biochemical_plot_tiff,
+    {
+      biochemical_plot
+      
+      ggsave(plot = biochemical_plot, filename = "plots/biochemical_plot.tiff", device = "tiff", dpi = 300, width = 15, height = 8)
+      
+    }
   )
 )

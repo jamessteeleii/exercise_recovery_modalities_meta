@@ -6,13 +6,19 @@ biochemical_data|stem|eb734d352fd59c4e|b69177cab6226e63|bafa9b42522adbb0|-786590
 performance_data|stem|a17b7ca41a419726|17e18dbf23a17278|50ab91f3e16f1e0c|1413078320||t20539.6319911421s|s29688b|29688|qs|local|vector|||0.02||
 perceptual_data|stem|4b3b8d707d790270|80dc54716b8f3ce8|307111860f3eb119|-1767747199||t20539.6319941156s|s15284b|15284|qs|local|vector|||0.04||
 weak_prior|stem|cb4c61b5ed8b0af5|654ff1ff722de497|2c530c1562a7fbd1|-1470565376||t20539.6372443159s|s274b|274|qs|local|vector|||2.06||
+biochemical_model|stem|c4fd93e29625345c|f3035316217e38a0|7a6c04a502c2f74a|1037154267||t20539.6631643058s|s203591414b|203591414|qs|local|vector|||345.23|Rows containing NAs were excluded from the model.|
+performance_model|stem|b69252bd4a59e545|69488ec5832414d5|39d912c2dd3c0f76|2033669518||t20539.6703655778s|s275040871b|275040871|qs|local|vector|||621.39||
+perceptual_model|stem|ebb7e8b51d148f59|661fa7e158b4cf26|999b08937212899c|-624078439||t20539.6722656729s|s167380343b|167380343|qs|local|vector|||163.42||
+plot_biochemical_model|function|ca6ec154eef56ac3
 calculate_effect_sizes_biochemical|function|da34bb972d137968
 fit_model_biochemical|function|8d22894116e2ed3a
 calculate_effect_sizes_performance|function|7f4803217726f6bf
 read_prepare_data|function|006dca18caaf2ffe
+plot_performance_model|function|2cdfce6317910b61
 fit_model_performance|function|8847121ff8d01502
 fit_model_perceptual|function|3680bb45312b0ec3
 calculate_effect_sizes_perceptual|function|ebc80a6acf3d5c8b
-biochemical_model|stem|c4fd93e29625345c|f3035316217e38a0|7a6c04a502c2f74a|1037154267||t20539.6631643058s|s203591414b|203591414|qs|local|vector|||345.23|Rows containing NAs were excluded from the model.|
-performance_model|stem|b69252bd4a59e545|69488ec5832414d5|39d912c2dd3c0f76|2033669518||t20539.6703655778s|s275040871b|275040871|qs|local|vector|||621.39||
-perceptual_model|stem|ebb7e8b51d148f59|661fa7e158b4cf26|999b08937212899c|-624078439||t20539.6722656729s|s167380343b|167380343|qs|local|vector|||163.42||
+performance_plot|stem|92cc089542ff938d|a5ea52b968558eb3|c8f0fbcb02e6c4b4|1406073675||t20539.9599684662s|s413025284b|413025284|qs|local|vector|||30.69|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. The `label.size` argument of `geom_label()` is deprecated as of ggplot2 3.5.0. ℹ Please use the `linewidth` argument instead.|
+biochemical_plot|stem|b6d7c55f502cf91e|82e076f9c7d80914|66b4b54131469ff6|-1356718352||t20539.9602636952s|s305962743b|305962743|qs|local|vector|||23.83||
+performance_plot_tiff|stem|84a7881273c4fab5|1cb3fec0afbc9274|4a9cf9cb57577d5b|-183921168||t20539.960294065s|s103b|103|qs|local|vector|||1.44|Removed 10 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 10 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 1 row containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
+biochemical_plot_tiff|stem|0d1d1aff8f39faf0|0d7ab4c0ecb480d0|9db6b3ea8cb3d8a3|269448676||t20539.9603158063s|s103b|103|qs|local|vector|||1.11|Removed 8 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 8 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 1 row containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
