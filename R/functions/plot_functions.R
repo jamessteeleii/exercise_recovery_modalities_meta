@@ -1,9 +1,21 @@
 plot_performance_model <- function(performance_model, performance_data) {
   
+  max_time <- performance_model$data |>
+    group_by(recovery_mode) |>
+    summarise(max_time = max(time_hours, na.rm = TRUE))
+  
+  pred_grid <- max_time |>
+    rowwise() |>
+    mutate(
+      time_hours = list(seq(0, max_time, by = 4))
+    ) |>
+    unnest(time_hours) |>
+    ungroup() |>
+    mutate(vi = 0)
+  
   preds <- predictions(performance_model, 
                                           re_formula= NA,
-                                          newdata = performance_model$data
-                                          
+                                          newdata = pred_grid
   ) |>
     mutate(
       recovery_mode = factor(recovery_mode,
@@ -91,10 +103,6 @@ plot_performance_model <- function(performance_model, performance_data) {
     ) |>
     arrange(contrast, time_hours)
   
-  max_time <- performance_model$data |>
-    group_by(recovery_mode) |>
-    summarise(max_time = max(time_hours, na.rm = TRUE))
-  
   contr_ref <- contr_ref |>
     left_join(max_time, by = c("contrast" = "recovery_mode")) |>
     filter(is.na(max_time) | time_hours <= max_time)
@@ -170,10 +178,22 @@ plot_performance_model <- function(performance_model, performance_data) {
 
 plot_biochemical_model <- function(biochemical_model, biochemical_data) {
   
+  max_time <- biochemical_model$data |>
+    group_by(recovery_mode) |>
+    summarise(max_time = max(time_hours, na.rm = TRUE))
+  
+  pred_grid <- max_time |>
+    rowwise() |>
+    mutate(
+      time_hours = list(seq(0, max_time, by = 4))
+    ) |>
+    unnest(time_hours) |>
+    ungroup() |>
+    mutate(vi = 0)
+  
   preds <- predictions(biochemical_model, 
                        re_formula= NA,
-                       newdata = biochemical_model$data
-                       
+                       newdata = pred_grid
   ) |>
     mutate(
       recovery_mode = factor(recovery_mode,
