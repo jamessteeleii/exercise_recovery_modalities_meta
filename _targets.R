@@ -31,13 +31,56 @@ tar_source("R/functions/.")
 
 # Replace the target list below with your own:
 list(
+  
+  #### Read in and prepare data, calculate effect sizes etc. ----
   tar_target(
-    name = data,
-    command = tibble(x = rnorm(100), y = rnorm(100))
-    # format = "qs" # Efficient storage for general data objects.
+    all_data_prepared_file,
+    here("data", "data.xlsx"),
+    format = "file"
   ),
+  
   tar_target(
-    name = model,
-    command = coefficients(lm(y ~ x, data = data))
+    all_data_prepared,
+    read_prepare_data(all_data_prepared_file)
+  ),
+  
+  tar_target(
+    performance_data,
+    calculate_effect_sizes_performance(all_data_prepared)
+  ),
+  
+  tar_target(
+    biochemical_data,
+    calculate_effect_sizes_biochemical(all_data_prepared)
+  ),
+  
+  tar_target(
+    perceptual_data,
+    calculate_effect_sizes_perceptual(all_data_prepared)
+  ),
+  
+  #### Fit models ----
+  tar_target(
+    weak_prior,
+    {
+      priors <- c(
+        set_prior("student_t(3,0,2.5)", class = "b")
+      )
+    }
+  ),
+  
+  tar_target(
+    performance_model,
+    fit_model_performance(performance_data, weak_prior)
+  ),
+  
+  tar_target(
+    biochemical_model,
+    fit_model_biochemical(biochemical_data, weak_prior)
+  ),
+  
+  tar_target(
+    perceptual_model,
+    fit_model_perceptual(perceptual_data, weak_prior)
   )
 )

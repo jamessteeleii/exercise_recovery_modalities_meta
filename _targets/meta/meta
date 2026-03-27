@@ -1,0 +1,18 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+all_data_prepared_file|stem|0dfc9ece17bb0899|5fbd75e37f913ef6|2c530c1562a7fbd1|-576424019|C:/Users/james/Dropbox/Research/PhD Students/Current/Bailey/exercise_recovery_modalities_meta/data/data.xlsx|t20516.485931095s|s119374b|119374|file|local|vector|||3.91||
+all_data_prepared|stem|a4afea6f77ca40fe|8656e4698ec1284e|750a4f9965a03c98|-698383064||t20539.6259826099s|s21860b|21860|qs|local|vector|||0.09||
+calculate_effect_sizes|function|0948cd9aa2c2d553
+biochemical_data|stem|eb734d352fd59c4e|b69177cab6226e63|bafa9b42522adbb0|-786590878||t20539.631988343s|s17247b|17247|qs|local|vector|||0.02|Some 'yi' and/or 'vi' values equal to +-Inf. Recoded to NAs.|
+performance_data|stem|a17b7ca41a419726|17e18dbf23a17278|50ab91f3e16f1e0c|1413078320||t20539.6319911421s|s29688b|29688|qs|local|vector|||0.02||
+perceptual_data|stem|4b3b8d707d790270|80dc54716b8f3ce8|307111860f3eb119|-1767747199||t20539.6319941156s|s15284b|15284|qs|local|vector|||0.04||
+weak_prior|stem|cb4c61b5ed8b0af5|654ff1ff722de497|2c530c1562a7fbd1|-1470565376||t20539.6372443159s|s274b|274|qs|local|vector|||2.06||
+calculate_effect_sizes_biochemical|function|da34bb972d137968
+fit_model_biochemical|function|8d22894116e2ed3a
+calculate_effect_sizes_performance|function|7f4803217726f6bf
+read_prepare_data|function|006dca18caaf2ffe
+fit_model_performance|function|8847121ff8d01502
+fit_model_perceptual|function|3680bb45312b0ec3
+calculate_effect_sizes_perceptual|function|ebc80a6acf3d5c8b
+biochemical_model|stem|c4fd93e29625345c|f3035316217e38a0|7a6c04a502c2f74a|1037154267||t20539.6631643058s|s203591414b|203591414|qs|local|vector|||345.23|Rows containing NAs were excluded from the model.|
+performance_model|stem|b69252bd4a59e545|69488ec5832414d5|39d912c2dd3c0f76|2033669518||t20539.6703655778s|s275040871b|275040871|qs|local|vector|||621.39||
+perceptual_model|stem|ebb7e8b51d148f59|661fa7e158b4cf26|999b08937212899c|-624078439||t20539.6722656729s|s167380343b|167380343|qs|local|vector|||163.42||
