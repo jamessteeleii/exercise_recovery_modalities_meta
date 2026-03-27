@@ -167,8 +167,8 @@ plot_performance_model <- function(performance_model, performance_data) {
   performance_plot <- (preds_plot + contr_plot) +
     plot_annotation(
       title =  "Performance Outcomes",
-      caption = "Points on predicted fatigue/recovery plot are individual effect size estimates and their size is weighted by their inverse sampling variance"
-    ) +
+      caption = paste("Lines and ribbons are global grand mean estimates with 95% quantile intervals\n",
+                      "Both predictions and contrasts are visualised only over time ranges supported by observed data for each modality")    ) +
     plot_layout(guides = "collect") &
     theme(legend.position = "bottom")
   
@@ -348,8 +348,9 @@ plot_biochemical_model <- function(biochemical_model, biochemical_data) {
   biochemical_plot <- (preds_plot + contr_plot) +
     plot_annotation(
       title =  "Biochemical Outcomes",
-      caption = "Points on predicted fatigue/recovery plot are individual effect size estimates and their size is weighted by their inverse sampling variance"
-    ) +
+      caption = paste("Lines and ribbons are global grand mean estimates with 95% quantile intervals\n",
+                      "Both predictions and contrasts are visualised only over time ranges supported by observed data for each modality")
+      ) +
     plot_layout(guides = "collect") &
     theme(legend.position = "bottom")
   
