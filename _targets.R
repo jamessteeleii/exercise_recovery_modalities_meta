@@ -14,6 +14,7 @@ tar_option_set(
     "here",
     "metafor",
     "brms",
+    "bayesplot",
     "marginaleffects",
     "tidybayes",
     "patchwork"
@@ -84,10 +85,56 @@ list(
     fit_model_perceptual(perceptual_data, weak_prior)
   ),
   
+  #### Model checks ----
+  tar_target(
+    rhat_performance_model,
+    make_rhat_plot(performance_model)
+  ),
+  
+  tar_target(
+    trace_plot_performance_model,
+    make_trace_plot(performance_model)
+  ),
+  
+  tar_target(
+    pp_check_performance_model,
+    make_pp_check(performance_model)
+  ),
+  
+  tar_target(
+    rhat_biochemical_model,
+    make_rhat_plot(biochemical_model)
+  ),
+  
+  tar_target(
+    trace_plot_biochemical_model,
+    make_trace_plot(biochemical_model)
+  ),
+  
+  tar_target(
+    pp_check_biochemical_model,
+    make_pp_check(biochemical_model)
+  ),
+  
+  tar_target(
+    rhat_perceptual_model,
+    make_rhat_plot(perceptual_model)
+  ),
+  
+  tar_target(
+    trace_plot_perceptual_model,
+    make_trace_plot(perceptual_model)
+  ),
+  
+  tar_target(
+    pp_check_perceptual_model,
+    make_pp_check(perceptual_model)
+  ),
+  
   #### Plot results ----
   tar_target(
     performance_plot,
-    plot_performance_model(performance_model, performance_data)
+    plot_performance_model(performance_model)
   ),
   
   tar_target(
@@ -102,7 +149,7 @@ list(
   
   tar_target(
     biochemical_plot,
-    plot_biochemical_model(biochemical_model, biochemical_data)
+    plot_biochemical_model(biochemical_model)
   ),
   
   tar_target(
@@ -111,6 +158,21 @@ list(
       biochemical_plot
       
       ggsave(plot = biochemical_plot, filename = "plots/biochemical_plot.tiff", device = "tiff", dpi = 300, width = 15, height = 8)
+      
+    }
+  ),
+  
+  tar_target(
+    perceptual_plot,
+    plot_perceptual_model(perceptual_model)
+  ),
+  
+  tar_target(
+    perceptual_plot_tiff,
+    {
+      perceptual_plot
+      
+      ggsave(plot = perceptual_plot, filename = "plots/perceptual_plot.tiff", device = "tiff", dpi = 300, width = 15, height = 8)
       
     }
   )

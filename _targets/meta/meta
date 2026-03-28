@@ -8,17 +8,32 @@ perceptual_data|stem|4b3b8d707d790270|80dc54716b8f3ce8|307111860f3eb119|-1767747
 weak_prior|stem|cb4c61b5ed8b0af5|654ff1ff722de497|2c530c1562a7fbd1|-1470565376||t20539.6372443159s|s274b|274|qs|local|vector|||2.06||
 biochemical_model|stem|c4fd93e29625345c|f3035316217e38a0|7a6c04a502c2f74a|1037154267||t20539.6631643058s|s203591414b|203591414|qs|local|vector|||345.23|Rows containing NAs were excluded from the model.|
 performance_model|stem|b69252bd4a59e545|69488ec5832414d5|39d912c2dd3c0f76|2033669518||t20539.6703655778s|s275040871b|275040871|qs|local|vector|||621.39||
-perceptual_model|stem|ebb7e8b51d148f59|661fa7e158b4cf26|999b08937212899c|-624078439||t20539.6722656729s|s167380343b|167380343|qs|local|vector|||163.42||
-plot_biochemical_model|function|7f6ff381ad54ce79
+biochemical_plot|stem|a0e0db26dfeeefdb|71ee59c04296eb82|010ef3cf3df05b9f|-1356718352||t20540.393455146s|s204037643b|204037643|qs|local|vector|||28.14|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. The `label.size` argument of `geom_label()` is deprecated as of ggplot2 3.5.0. ℹ Please use the `linewidth` argument instead.|
+performance_plot|stem|82fee6c8d081e240|2a4ac53e9f31a3af|d1ae5727d37e7d35|1406073675||t20540.3937527862s|s275567299b|275567299|qs|local|vector|||24.12||
+biochemical_plot_tiff|stem|0d1d1aff8f39faf0|0d7ab4c0ecb480d0|5746df6aa87e578d|269448676||t20540.3937994487s|s103b|103|qs|local|vector|||3.08|Removed 108 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 108 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 1 row containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
+performance_plot_tiff|stem|84a7881273c4fab5|1cb3fec0afbc9274|24dcfde824a3ad73|-183921168||t20540.393820659s|s103b|103|qs|local|vector|||1.13|Removed 108 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 108 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 1 row containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
+perceptual_model|stem|3a835aa386687fad|661fa7e158b4cf26|999b08937212899c|-624078439||t20540.4058056757s|s167388071b|167388071|qs|local|vector|||165.81||
+perceptual_plot|stem|d3e970cc2b9354ba|3b37cc01c450aed8|8a7233736a25fd6a|1411894174||t20540.4100726258s|s168215239b|168215239|qs|local|vector|||19.95|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. The `label.size` argument of `geom_label()` is deprecated as of ggplot2 3.5.0. ℹ Please use the `linewidth` argument instead.|
+perceptual_plot_tiff|stem|35e5b11d08b6f437|1ef4b2ca16666a95|0b3d4ea1d157e127|635439331||t20540.410095518s|s102b|102|qs|local|vector|||1.22|Removed 12 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 12 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 29 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
+trace_plot_biochemical_model|stem|7c082f4758d129cb|cf3e0a5ad7d39122|c1696d656033a84f|-1139742316||t20540.4135618456s|s79354874b|79354874|qs|local|vector|||13.71||
+pp_check_biochemical_model|stem|2326c1f2a19d97fc|a1e75a084ce47c4c|fcf2bccca12d89e2|2143832222||t20540.4135883883s|s232742b|232742|qs|local|vector|||1.72||
+plot_biochemical_model|function|0d9503b7d4146084
+make_trace_plot|function|accba148807567de
 calculate_effect_sizes_biochemical|function|da34bb972d137968
+make_pp_check|function|c79fbb38cad10d76
+make_rhat_plot|function|ff9978352d799ec0
 fit_model_biochemical|function|8d22894116e2ed3a
 calculate_effect_sizes_performance|function|7f4803217726f6bf
 read_prepare_data|function|006dca18caaf2ffe
-plot_performance_model|function|4334332d2cfa5786
+plot_performance_model|function|fb4e81b45adacfde
+plot_perceptual_model|function|71e599617c3af19d
 fit_model_performance|function|8847121ff8d01502
 fit_model_perceptual|function|3680bb45312b0ec3
 calculate_effect_sizes_perceptual|function|ebc80a6acf3d5c8b
-performance_plot|stem|f71cf00e110f7627|a5ea52b968558eb3|1a8830410201f23b|1406073675||t20539.9736842234s|s413013140b|413013140|qs|local|vector|||29.3|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. The `label.size` argument of `geom_label()` is deprecated as of ggplot2 3.5.0. ℹ Please use the `linewidth` argument instead.|
-biochemical_plot|stem|bed966d21b0d7129|82e076f9c7d80914|19a3e243c203d5ae|-1356718352||t20539.9739889138s|s305800975b|305800975|qs|local|vector|||24.28||
-performance_plot_tiff|stem|84a7881273c4fab5|1cb3fec0afbc9274|c5be5ef014b4304c|-183921168||t20539.9740181692s|s103b|103|qs|local|vector|||1.39|Removed 108 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 108 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 1 row containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
-biochemical_plot_tiff|stem|0d1d1aff8f39faf0|0d7ab4c0ecb480d0|a22f2a5c737ad37f|269448676||t20539.9740399841s|s103b|103|qs|local|vector|||1.11|Removed 108 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 108 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 1 row containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
+rhat_biochemical_model|stem|919ea8751295c538|2747da5432219641|710b62e0c34930bc|-415290196||t20540.4168205495s|s203861131b|203861131|qs|local|vector|||11.92||
+trace_plot_performance_model|stem|8e2d0b8b69159e2f|a2dc19ceb82480c2|75f7d5390403ac3d|1366210945||t20540.4169636467s|s78906063b|78906063|qs|local|vector|||11.2||
+rhat_performance_model|stem|a79be455d7bff84a|63b588ff463613bf|344e1f6577d06de7|-1293218670||t20540.417114219s|s275260721b|275260721|qs|local|vector|||11.95||
+pp_check_performance_model|stem|ef7075275648334b|e5dfea36c136ff71|2d9fc4c196a6b4fa|-696902126||t20540.4171491813s|s322480b|322480|qs|local|vector|||2.36||
+trace_plot_perceptual_model|stem|b60e174a446e559f|dab8c6fecedba4c9|bc230920f1ac9683|1226876745||t20540.4172659698s|s64803433b|64803433|qs|local|vector|||9.11||
+rhat_perceptual_model|stem|20ad51bea197a7ec|fa1c722801fb5ee8|2ae9d178b3f5a938|-992225067||t20540.4173671008s|s167829071b|167829071|qs|local|vector|||7.89||
+pp_check_perceptual_model|stem|652e5256aa425f00|8b2ccd5d197e40c4|c36ccf98960588c9|-471112386||t20540.4173890858s|s226126b|226126|qs|local|vector|||1.36||

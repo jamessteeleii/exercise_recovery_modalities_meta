@@ -1,0 +1,110 @@
+---
+title: "Diagnostic Plots"
+subtitle: "TO ADD"
+author: "TO ADD"
+format: html
+---
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+targets::tar_config_set(store = here::here('_targets'))
+
+```
+
+
+# Performance Model
+
+## $\hat{R}$
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(rhat_performance_model)
+
+rhat_performance_model 
+
+
+```
+
+## Trace plots
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(trace_plot_performance_model)
+
+trace_plot_performance_model
+
+```
+
+## Posterior predictive check
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(pp_check_performance_model)
+
+pp_check_performance_model
+
+```
+
+# Biochemical Model
+
+## $\hat{R}$
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(rhat_biochemical_model)
+
+rhat_biochemical_model 
+
+
+```
+
+## Trace plots
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(trace_plot_biochemical_model)
+
+trace_plot_biochemical_model
+
+```
+
+## Posterior predictive check
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(pp_check_biochemical_model)
+
+pp_check_biochemical_model
+
+```
+
+# Perceptual Model
+
+## $\hat{R}$
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(rhat_perceptual_model)
+
+rhat_perceptual_model 
+
+
+```
+
+## Trace plots
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(trace_plot_perceptual_model)
+
+trace_plot_perceptual_model
+
+```
+
+## Posterior predictive check
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(pp_check_perceptual_model)
+
+pp_check_perceptual_model
+
+```
