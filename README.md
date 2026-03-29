@@ -34,7 +34,7 @@ Useful console functions:
 
 ## Software and packages used
 
-The [`grateful`](https://pakillo.github.io/grateful/index.html) package was used to create citations to all software and packages used in the analysis. The `grateful` report can be viewed by downloading by clicking [here](https://jamessteeleii.github.io/exercise_recovery_modalities_meta/grateful_report.html).
+The [`grateful`](https://pakillo.github.io/grateful/index.html) package was used to create citations to all software and packages used in the analysis. The `grateful` report can be viewed by downloading by clicking [here](https://jamessteeleii.github.io/exercise_recovery_modalities_meta/grateful-report.html).
 
 ## License
 
@@ -46,6 +46,6 @@ This work is licensed under a
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
 
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
-  [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
