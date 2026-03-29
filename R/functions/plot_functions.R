@@ -533,7 +533,7 @@ plot_perceptual_model <- function(perceptual_model) {
       title =  "Perceptual Outcomes",
       caption = paste("Lines and ribbons are global grand mean estimates with 95% quantile intervals\n",
                       "Both predictions and contrasts are visualised only over time ranges supported by observed data for each modality\n",
-                      "Note, both heat and massage conditions not modelled due to only a single study reporting on either")
+                      "Note, heat conditions not modelled due to only a single study reporting and providing insufficient data for effect size calculation")
     ) +
     plot_layout(guides = "collect") &
     theme(legend.position = "bottom")

@@ -16,6 +16,12 @@ performance_plot|stem|5dcbf6261755c31c|2a4ac53e9f31a3af|f36c22375a959772|1406073
 trace_plot_performance_model|stem|955cb0c315695983|a2dc19ceb82480c2|408a4ae36a7d9855|1366210945||t20541.7429489497s|s78886120b|78886120|qs|local|vector|||10.81||
 rhat_performance_model|stem|8077e4bfe11386d0|63b588ff463613bf|cc11cfe182ef15ff|-1293218670||t20541.7430977501s|s275213841b|275213841|qs|local|vector|||11.73||
 pp_check_performance_model|stem|ef7075275648334b|e5dfea36c136ff71|3fc28d763cc5b0e9|-696902126||t20541.7431286352s|s322480b|322480|qs|local|vector|||1.79||
+perceptual_model|stem|3c1db8bb3e2b3b5c|661fa7e158b4cf26|bbe8340d8e89a640|-624078439||t20541.7521666824s|s204542190b|204542190|qs|local|vector|||328.4||
+trace_plot_perceptual_model|stem|f0edbdf83e6b15e4|dab8c6fecedba4c9|8539980c974e7686|1226876745||t20541.7525710278s|s72007266b|72007266|qs|local|vector|||10.7||
+rhat_perceptual_model|stem|12b19d4236f8e548|fa1c722801fb5ee8|95c159d5ca5fe9b4|-992225067||t20541.7526832162s|s205241752b|205241752|qs|local|vector|||8.51||
+pp_check_perceptual_model|stem|1eecc36dd1391e4f|8b2ccd5d197e40c4|876d5e56f21a18cb|-471112386||t20541.7527090668s|s238200b|238200|qs|local|vector|||1.51||
+biochemical_plot_tiff|stem|0d1d1aff8f39faf0|7337c3bf7967c304|ebee8806b68c7e10|269448676||t20541.7527521509s|s103b|103|qs|local|vector|||3.11|Removed 108 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 108 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 1 row containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
+performance_plot_tiff|stem|84a7881273c4fab5|b8694eeb55485c3e|d102a5a463b4c90d|-183921168||t20541.7527733795s|s103b|103|qs|local|vector|||1.12|Removed 108 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 108 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 1 row containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
 plot_biochemical_model|function|2ab60f9e51f5a763
 make_trace_plot|function|accba148807567de
 calculate_effect_sizes_biochemical|function|da34bb972d137968
@@ -25,15 +31,9 @@ fit_model_biochemical|function|8d22894116e2ed3a
 calculate_effect_sizes_performance|function|7f4803217726f6bf
 read_prepare_data|function|0927f026fed4ffd5
 plot_performance_model|function|2e4378b331ce7045
-plot_perceptual_model|function|284f663852b048ce
+plot_perceptual_model|function|beedfb0ca3f1c691
 fit_model_performance|function|8847121ff8d01502
 fit_model_perceptual|function|18380f272f757203
 calculate_effect_sizes_perceptual|function|ebc80a6acf3d5c8b
-perceptual_model|stem|3c1db8bb3e2b3b5c|661fa7e158b4cf26|bbe8340d8e89a640|-624078439||t20541.7521666824s|s204542190b|204542190|qs|local|vector|||328.4||
-perceptual_plot|stem|cca8d60771275e15|3b37cc01c450aed8|c0fc7b4617b662a7|1411894174||t20541.7524300322s|s205351807b|205351807|qs|local|vector|||21.43|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. The `label.size` argument of `geom_label()` is deprecated as of ggplot2 3.5.0. ℹ Please use the `linewidth` argument instead.|
-trace_plot_perceptual_model|stem|f0edbdf83e6b15e4|dab8c6fecedba4c9|8539980c974e7686|1226876745||t20541.7525710278s|s72007266b|72007266|qs|local|vector|||10.7||
-rhat_perceptual_model|stem|12b19d4236f8e548|fa1c722801fb5ee8|95c159d5ca5fe9b4|-992225067||t20541.7526832162s|s205241752b|205241752|qs|local|vector|||8.51||
-pp_check_perceptual_model|stem|1eecc36dd1391e4f|8b2ccd5d197e40c4|876d5e56f21a18cb|-471112386||t20541.7527090668s|s238200b|238200|qs|local|vector|||1.51||
-biochemical_plot_tiff|stem|0d1d1aff8f39faf0|7337c3bf7967c304|ebee8806b68c7e10|269448676||t20541.7527521509s|s103b|103|qs|local|vector|||3.11|Removed 108 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 108 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 1 row containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
-performance_plot_tiff|stem|84a7881273c4fab5|b8694eeb55485c3e|d102a5a463b4c90d|-183921168||t20541.7527733795s|s103b|103|qs|local|vector|||1.12|Removed 108 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 108 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 1 row containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
-perceptual_plot_tiff|stem|35e5b11d08b6f437|68ff039811294b1b|7835c90e4e7fe0b2|635439331||t20541.7527939328s|s102b|102|qs|local|vector|||1.06|Removed 19 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 18 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 25 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
+perceptual_plot|stem|69eb53918ec3c020|3b37cc01c450aed8|26c38310bc9c3035|1411894174||t20541.7642751116s|s205497325b|205497325|qs|local|vector|||23.26|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. The `label.size` argument of `geom_label()` is deprecated as of ggplot2 3.5.0. ℹ Please use the `linewidth` argument instead.|
+perceptual_plot_tiff|stem|35e5b11d08b6f437|68ff039811294b1b|37cd171459639c3c|635439331||t20541.7642999881s|s102b|102|qs|local|vector|||1.22|Removed 19 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 18 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 25 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
