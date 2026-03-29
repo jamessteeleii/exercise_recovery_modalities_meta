@@ -1,10 +1,60 @@
 ---
 title: "Diagnostic Plots"
-subtitle: "TO ADD"
-author: "TO ADD"
+subtitle: "A Comparison of Post-Exercise Recovery Modalities: A Systematic Review and Meta-Analysis"
+date: last-modified
+date-format: long
 format: html
+toc: true
+number-sections: true
+author:
+  - name: Bailey Cameron
+    affil-id: 1
+    orcid: 0009-0005-8964-9811
+    corresponding: true
+    email: 5cameb31@solent.ac.uk
+    affiliations:
+        - id: 1
+          name: Solent University, Southampton, Hampshire, UK
+  - name: Lee Bridgeman
+    affil-id: 1
+    orcid: 0000-0002-7605-4289
+    email: lee.bridgeman@solent.ac.uk
+    affiliations:
+        - id: 1
+          name: Solent University, Southampton, Hampshire, UK
+  - name: Vickie Wong
+    affil-id: 1
+    orcid: 0000-0001-5002-7584
+    email: vickie.wong@solent.ac.uk
+    affiliations:
+        - id: 1
+          name: Solent University, Southampton, Hampshire, UK
+  - name: Scott Burnet
+    affil-id: 1
+    # orcid: 0000-0002-8003-0757
+    corresponding: true
+    email: scott.burnet@solent.ac.uk
+    affiliations:
+        - id: 1
+          name: Solent University, Southampton, Hampshire, UK
+  - name: James Steele
+    affil-id: 2,3,4
+    orcid: 0000-0002-8003-0757
+    corresponding: true
+    email: james@steele-research.com
+    affiliations:
+        - id: 2
+          name: Steele Research Limited, Eastleigh, Hampshire, UK
+        - id: 2
+          name: MacroFactor, Raleigh, North Carolina, USA
+        - id: 4
+          name: School of Health and Biomedical Sciences, Royal Melbourne Institute of Technology, Melbourne, VIC, Australia
+execute: 
+  message: false
+  warning: false
+  echo: false
 ---
-```{r,message=FALSE,warning=FALSE,echo=FALSE}
+```{r}
 targets::tar_config_set(store = here::here('_targets'))
 
 ```
@@ -14,7 +64,7 @@ targets::tar_config_set(store = here::here('_targets'))
 
 ## $\hat{R}$
 
-```{r,message=FALSE,warning=FALSE,echo=FALSE}
+```{r}
 
 targets::tar_load(rhat_performance_model)
 
@@ -25,7 +75,7 @@ rhat_performance_model
 
 ## Trace plots
 
-```{r,message=FALSE,warning=FALSE,echo=FALSE}
+```{r}
 
 targets::tar_load(trace_plot_performance_model)
 
@@ -35,7 +85,7 @@ trace_plot_performance_model
 
 ## Posterior predictive check
 
-```{r,message=FALSE,warning=FALSE,echo=FALSE}
+```{r}
 
 targets::tar_load(pp_check_performance_model)
 
@@ -47,7 +97,7 @@ pp_check_performance_model
 
 ## $\hat{R}$
 
-```{r,message=FALSE,warning=FALSE,echo=FALSE}
+```{r}
 
 targets::tar_load(rhat_biochemical_model)
 
@@ -58,7 +108,7 @@ rhat_biochemical_model
 
 ## Trace plots
 
-```{r,message=FALSE,warning=FALSE,echo=FALSE}
+```{r}
 
 targets::tar_load(trace_plot_biochemical_model)
 
@@ -68,7 +118,7 @@ trace_plot_biochemical_model
 
 ## Posterior predictive check
 
-```{r,message=FALSE,warning=FALSE,echo=FALSE}
+```{r}
 
 targets::tar_load(pp_check_biochemical_model)
 
@@ -80,7 +130,7 @@ pp_check_biochemical_model
 
 ## $\hat{R}$
 
-```{r,message=FALSE,warning=FALSE,echo=FALSE}
+```{r}
 
 targets::tar_load(rhat_perceptual_model)
 
@@ -91,7 +141,7 @@ rhat_perceptual_model
 
 ## Trace plots
 
-```{r,message=FALSE,warning=FALSE,echo=FALSE}
+```{r}
 
 targets::tar_load(trace_plot_perceptual_model)
 
@@ -101,7 +151,7 @@ trace_plot_perceptual_model
 
 ## Posterior predictive check
 
-```{r,message=FALSE,warning=FALSE,echo=FALSE}
+```{r}
 
 targets::tar_load(pp_check_perceptual_model)
 
