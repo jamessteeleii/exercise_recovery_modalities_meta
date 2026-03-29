@@ -16,7 +16,6 @@ tar_option_set(
     "brms",
     "bayesplot",
     "marginaleffects",
-    "tidybayes",
     "patchwork"
   ), # Packages that your targets need for their tasks.
   memory = "transient",
@@ -142,7 +141,7 @@ list(
     {
       performance_plot
       
-      ggsave(plot = performance_plot, filename = "plots/performance_plot.tiff", device = "tiff", dpi = 300, width = 15, height = 8)
+      ggsave(plot = performance_plot, filename = "plots/performance_plot.tiff", device = "tiff", dpi = 300, width = 10, height = 6)
       
     }
   ),
@@ -157,7 +156,7 @@ list(
     {
       biochemical_plot
       
-      ggsave(plot = biochemical_plot, filename = "plots/biochemical_plot.tiff", device = "tiff", dpi = 300, width = 15, height = 8)
+      ggsave(plot = biochemical_plot, filename = "plots/biochemical_plot.tiff", device = "tiff", dpi = 300, width = 10, height = 6)
       
     }
   ),
@@ -172,7 +171,7 @@ list(
     {
       perceptual_plot
       
-      ggsave(plot = perceptual_plot, filename = "plots/perceptual_plot.tiff", device = "tiff", dpi = 300, width = 15, height = 8)
+      ggsave(plot = perceptual_plot, filename = "plots/perceptual_plot.tiff", device = "tiff", dpi = 300, width = 10, height = 6)
       
     }
   )

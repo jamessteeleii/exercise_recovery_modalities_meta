@@ -6,10 +6,15 @@ read_prepare_data <- function(file) {
       # add pre-post correlation assumption
       r_pre_post = 0.75,
       
-      # calculate missing baseline sd from se
+      # calculate missing sd from se
       sd_pre = case_when(
         is.na(sd_pre) ~ se_pre * sqrt(n),
         .default = sd_pre
+      ),
+      
+      sd_post = case_when(
+        is.na(sd_post) ~ se_post * sqrt(n),
+        .default = sd_post
       ),
       
       # reorder levels for recovery mode with control as reference

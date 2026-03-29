@@ -58,7 +58,8 @@ plot_performance_model <- function(performance_model) {
     theme_classic() +
     theme(
       plot.title = element_text(size = 12),
-      axis.title = element_text(size = 10)
+      axis.title = element_text(size = 8),
+      axis.text = element_text(size = 6)
     ) +
     scale_y_continuous(limits = c(-1.5,1.5), breaks = seq(-1.5, 1.5, by = 0.5)) +
     scale_x_continuous(limits = c(0,120), breaks = seq(0,120, by = 24))
@@ -130,7 +131,7 @@ plot_performance_model <- function(performance_model) {
       ),
       aes(x = x, y = y, label = label),
       inherit.aes = FALSE,
-      size = 3.5,
+      size = 2.25,
       label.size = 2.5,
       label.padding = unit(2, "lines"),
       fill = "white",
@@ -140,7 +141,7 @@ plot_performance_model <- function(performance_model) {
     labs(
       x = "Time Post Exercise (hours)",
       y = "Difference in Fatigue (SMD)",
-      title = "Contrasts between conditions for fatigue/recovery"
+      title = "Contrasts between recovery modalities and controls"
     ) +
     facet_wrap(
       ~ contrast,
@@ -156,7 +157,8 @@ plot_performance_model <- function(performance_model) {
     theme_classic() +
     theme(
       plot.title = element_text(size = 12),
-      axis.title = element_text(size = 10)
+      axis.title = element_text(size = 8),
+      axis.text = element_text(size = 6)
     ) +
     scale_y_continuous(limits = c(-0.75,0.75), breaks = seq(-0.75, 0.75, by = 0.25)) +
     scale_x_continuous(limits = c(0,120), breaks = seq(0,120, by = 24))
@@ -234,7 +236,8 @@ plot_biochemical_model <- function(biochemical_model) {
     theme_classic() +
     theme(
       plot.title = element_text(size = 12),
-      axis.title = element_text(size = 10)
+      axis.title = element_text(size = 8),
+      axis.text = element_text(size = 6)
     ) +
     scale_y_continuous(limits = c(-5.5,5.5), breaks = seq(-5, 5, by = 1)) +
     scale_x_continuous(limits = c(0,120), breaks = seq(0,120, by = 24))
@@ -310,7 +313,7 @@ plot_biochemical_model <- function(biochemical_model) {
       ),
       aes(x = x, y = y, label = label),
       inherit.aes = FALSE,
-      size = 3.5,
+      size = 2.25,
       label.size = 2.5,
       label.padding = unit(2, "lines"),
       fill = "white",
@@ -320,7 +323,7 @@ plot_biochemical_model <- function(biochemical_model) {
     labs(
       x = "Time Post Exercise (hours)",
       y = "Difference in Fatigue (SMD)",
-      title = "Contrasts between conditions for fatigue/recovery"
+      title = "Contrasts between recovery modalities and controls"
     ) +
     facet_wrap(
       ~ contrast,
@@ -336,7 +339,8 @@ plot_biochemical_model <- function(biochemical_model) {
     theme_classic() +
     theme(
       plot.title = element_text(size = 12),
-      axis.title = element_text(size = 10)
+      axis.title = element_text(size = 8),
+      axis.text = element_text(size = 6)
     ) +
     scale_x_continuous(limits = c(0,120), breaks = seq(0,120, by = 24))
   
@@ -414,7 +418,8 @@ plot_perceptual_model <- function(perceptual_model) {
     theme_classic() +
     theme(
       plot.title = element_text(size = 12),
-      axis.title = element_text(size = 10)
+      axis.title = element_text(size = 8),
+      axis.text = element_text(size = 6)
     ) +
     scale_y_continuous(limits = c(-3.5,3.5), breaks = seq(-3, 3, by = 1)) +
     scale_x_continuous(limits = c(0,120), breaks = seq(0,120, by = 24))
@@ -490,7 +495,7 @@ plot_perceptual_model <- function(perceptual_model) {
       ),
       aes(x = x, y = y, label = label),
       inherit.aes = FALSE,
-      size = 3.5,
+      size = 2.25,
       label.size = 2.5,
       label.padding = unit(2, "lines"),
       fill = "white",
@@ -500,7 +505,7 @@ plot_perceptual_model <- function(perceptual_model) {
     labs(
       x = "Time Post Exercise (hours)",
       y = "Difference in Fatigue (SMD)",
-      title = "Contrasts between conditions for fatigue/recovery"
+      title = "Contrasts between recovery modalities and controls"
     ) +
     facet_wrap(
       ~ contrast,
@@ -516,7 +521,8 @@ plot_perceptual_model <- function(perceptual_model) {
     theme_classic() +
     theme(
       plot.title = element_text(size = 12),
-      axis.title = element_text(size = 10)
+      axis.title = element_text(size = 8),
+      axis.text = element_text(size = 6)
     ) +
     scale_y_continuous(limits = c(-1.75,1.75), breaks = seq(-1.5, 1.5, by = 0.5)) +
     scale_x_continuous(limits = c(0,120), breaks = seq(0,120, by = 24))

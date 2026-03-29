@@ -51,7 +51,7 @@ fit_model_perceptual <- function(perceptual_data, priors)  {
   perceptual_data <- perceptual_data |>
     filter(!is.na(yi) | !is.na(vi)) |>
     
-    # relevel recovery mode due to missing modalities for perceptual outcomes
+    # re-level recovery mode due to missing modalities for perceptual outcomes
     mutate(recovery_mode = factor(recovery_mode,
                                   levels = c("control",
                                              "placebo",
@@ -59,7 +59,8 @@ fit_model_perceptual <- function(perceptual_data, priors)  {
                                              "bfr",
                                              "cold",
                                              "contrast",
-                                             "compression")))
+                                             "compression",
+                                             "massage")))
   
   model_perceptual <- brm(
     yi | se(sqrt(vi), sigma = TRUE) ~ 1 +  s(time_hours, bs='tp') + s(time_hours, by = recovery_mode, bs='tp') +

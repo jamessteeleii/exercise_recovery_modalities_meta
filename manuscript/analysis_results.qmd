@@ -1,0 +1,131 @@
+---
+title: "Analysis and Results"
+format: docx
+bibliography: mylibrary.bib
+csl: american-medical-association.csl
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
+```{r}
+library(tidyverse)
+library(brms)
+
+targets::tar_config_set(store = here::here('_targets'))
+
+```
+
+# Statistical Analysis
+Statistical analysis of the data extracted was performed in R (`r R.version$version.string`; R Core Team, https://www.r-project.org/) and RStudio (version 2026.01.1; Posit, https://posit.co/). All of the data, code, packages, and pipeline utilized for the data preparation and analyses is available on the Open Science Framework page for this project (https://osf.io/y275k/overview) and the corresponding GitHub repository (https://github.com/jamessteeleii/exercise_recovery_modalities_meta). Though pre-registered (see https://osf.io/qkpbm/overview) the present analysis is considered exploratory and aimed at effect estimation within a Bayesian meta-analytic framework. For all analyses, the model estimates and their precision, along with conclusions based upon them, are interpreted continuously and probabilistically, considering the data quality, the plausibility of effect, and the previous literature, all within the context of each model.
+
+## Effect sizes
+Pre- (i.e., rested) to post-exercise effect sizes were calculated within each condition for each outcome using Becker's d [@beckerSynthesizingStandardizedMeanchange1988] where the means for each post-exercise time point are expressed relative to the mean for the pre-exercise time point (i.e., post- minus pre-exercise) and this difference is standardised to the pre-exercise standard deviation. As such, negative values reflect decrements in the outcome relative to pre-exercise (i.e., fatigue) with a value of zero reflecting recovery back to pre-exercise values. For perceptual outcomes, deviating from our pre-registration, we standardised using pooled standard deviations across time points and heteroscedastic population variances [@bonettConfidenceIntervalsStandardized2008] given that many of the perceptual outcomes had ~0 variance at pre-exercise.
+
+## Meta-Analysis Model
+An arm-based multiple treatment comparison (i.e., network)-type meta-regression model was used given that multiple recovery modalities are examined and, for the studies included, each examined one or more different modalities and included differing numbers of post-exercise measurements taken at different time points. This kind of data structure precludes its synthesis in a typical contrast-based network meta-analysis, where data are limited to the effect sizes for paired contrasts between arms at particular time points and, thus, studies that include all arms measured at the same time points (i.e., relative effects between different recovery modalities). However, in arm-based analyses, the data are the absolute effects within each arm at each time point, and the information is borrowed across studies to enable both within-condition absolute and between-condition relative contrasts to be estimated. 
+
+Data extracted from the studies included was hierarchical across three levels (i.e., outcome variables within arms within studies), and so, we included random intercepts using implicit nested coding across these levels. We included a fixed effect for time point in hours post-exercise; however, we did not specify in our pre-registration what functional form we would allow for this. Given the exploratory and estimation based nature of our analysis we opted to allow for effects to described by a smooth function of time in hours using thin plate splines. In addition to the main fixed effect of time we also allowed for factor smooth interaction between time and recovery modality which produced a separate smooth function for each recovery modality. In addition we also included uncorrelated linear random slopes for time and the interaction of time and recovery modality within study and time within arm. Given we only included randomised trials we assume that post-exercise, yet prior to beginning each recovery modality, each condition belongs to the same population and so we did not include a fixed simple effect for the recovery modality (i.e., different intercepts). Due to model complexity (and the general lack of overall effects for any recovery modality - see results) we opted not to perform any additional exploratory analyses for specific outcomes interaction. Instead we opted to categorise outcomes into three broad areas and fit a separate model as specified above for each: performance outcomes, biochemical outcomes, and perceptual outcomes. 
+
+As noted in the pre-registration, given we did not know ahead of time what functional form we would adopt nor did we have clear prior information based on previous empirical data (and we also note that caution is required when setting priors for meta-analyses such that they are not influenced by studies that might be included in the likelihood and thus end up double counting information) we opted for weakly regularising priors set sufficiently wide to allow the data to be the primary influence. Priors for all parameters were set as a student t distribution with 3 degrees of freedom, centred on a location of zero, and with a scale of 2.5 thus permitting a wide range of prior effects.
+
+Results are presented as the global grand mean predicted values over time for the ranges over which observations were present within each modality. In addition, we focus on the comparisons between the different recovery modalities in comparison to the reference of non-intervention control conditions over time to determine whether any recovery modality outperformed non-intervention controls in terms of recovery. All models were run with 2000 warmup and 6000 sampling iterations across four Monte Carlo Markov Chains. Trace plots were produced along with $\hat{R}$ plots to examine whether chains had converged (all were $\hat{R}<1.05$ and most $\hat{R}<1.01$) in addition to posterior predictive checks to understand the model implied distributions (see [here](https://jamessteeleii.github.io/exercise_recovery_modalities_meta/plots/diagnostic_plots.html)).
+
+# Results
+## Performance Outcomes
+```{r}
+targets::tar_load(performance_model)
+
+n_study_performance <- dim(ranef(performance_model)$study_id)[1]
+
+n_arm_performance <- dim(ranef(performance_model)$`study_id:arm`)[1]
+
+n_conditions_performance <- performance_model$data |>
+  group_by(`study_id:arm`) |>
+  distinct(recovery_mode) |>
+  group_by(recovery_mode) |>
+  count()
+  
+
+```
+The model examining performance outcomes included `r n_study_performance` studies containing `r n_arm_performance` separate arms reporting `r nobs(performance_model)` within arm effects. The breakdown of recovery modality conditions included was `r n_conditions_performance$n[1]` control, `r n_conditions_performance$n[2]` placebo, `r n_conditions_performance$n[3]` active, `r n_conditions_performance$n[4]` blood flow restriction, `r n_conditions_performance$n[5]` cold, `r n_conditions_performance$n[6]` heat, `r n_conditions_performance$n[7]` contrast, `r n_conditions_performance$n[8]` compression, and `r n_conditions_performance$n[9]` massage. Global grand mean estimates for both predicted values and contrasts against the reference condition of non-intervention control are shown in @fig-performance. Across all modalities performance had recovered to pre-exercise values from ~72-120 hours post-exercise with no modality resulting in clearly better recovery compared to non-intervention controls.
+
+```{r}
+targets::tar_load(performance_plot)
+```
+
+```{r}
+#| label: fig-performance
+#| fig-width: 10
+#| fig-height: 6
+#| fig-cap: Global grand means for predictions and contrasts from meta-analysis of performance outcomes across recovery modality conditions over time post-exercise. Left panel shows predicted values for fatigue and subsequent recovery, right panel shows the comparison of fatigue/recovery between each recovery modality and non-intervention controls.
+
+performance_plot
+
+```
+
+## Biochemical Outcomes
+```{r}
+targets::tar_load(biochemical_model)
+
+n_study_biochemical <- dim(ranef(biochemical_model)$study_id)[1]
+
+n_arm_biochemical <- dim(ranef(biochemical_model)$`study_id:arm`)[1]
+
+n_conditions_biochemical <- biochemical_model$data |>
+  group_by(`study_id:arm`) |>
+  distinct(recovery_mode) |>
+  group_by(recovery_mode) |>
+  count()
+  
+
+```
+The model examining biochemical outcomes included `r n_study_biochemical` studies containing `r n_arm_biochemical` separate arms reporting `r nobs(biochemical_model)` within arm effects. The breakdown of recovery modality conditions included was `r n_conditions_biochemical$n[1]` control, `r n_conditions_biochemical$n[2]` placebo, `r n_conditions_biochemical$n[3]` active, `r n_conditions_biochemical$n[4]` blood flow restriction, `r n_conditions_biochemical$n[5]` cold, `r n_conditions_biochemical$n[6]` heat, `r n_conditions_biochemical$n[7]` contrast, `r n_conditions_biochemical$n[8]` compression, and `r n_conditions_biochemical$n[9]` massage. Global grand mean estimates for both predicted values and contrasts against the reference condition of non-intervention control are shown in @fig-biochemical. Across all modalities biochemical did not begin to recover until after ~24 hours post-exercise and had still not clearly returned to pre-exercise values up to ~120 hours post-. No modality resulted in clearly better recovery compared to non-intervention controls.
+
+```{r}
+targets::tar_load(biochemical_plot)
+```
+
+```{r}
+#| label: fig-biochemical
+#| fig-width: 10
+#| fig-height: 6
+#| fig-cap: Global grand means for predictions and contrasts from meta-analysis of biochemical outcomes across recovery modality conditions over time post-exercise. Left panel shows predicted values for fatigue and subsequent recovery, right panel shows the comparison of fatigue/recovery between each recovery modality and non-intervention controls.
+
+biochemical_plot
+
+```
+
+## Perceptual Outcomes
+```{r}
+targets::tar_load(perceptual_model)
+
+n_study_perceptual <- dim(ranef(perceptual_model)$study_id)[1]
+
+n_arm_perceptual <- dim(ranef(perceptual_model)$`study_id:arm`)[1]
+
+n_conditions_perceptual <- perceptual_model$data |>
+  group_by(`study_id:arm`) |>
+  distinct(recovery_mode) |>
+  group_by(recovery_mode) |>
+  count()
+  
+
+```
+The model examining perceptual outcomes included `r n_study_perceptual` studies containing `r n_arm_perceptual` separate arms reporting `r nobs(perceptual_model)` within arm effects. The breakdown of recovery modality conditions included was `r n_conditions_perceptual$n[1]` control, `r n_conditions_perceptual$n[2]` placebo, `r n_conditions_perceptual$n[3]` active, `r n_conditions_perceptual$n[4]` blood flow restriction, `r n_conditions_perceptual$n[5]` cold, 0 heat, `r n_conditions_perceptual$n[6]` contrast, `r n_conditions_perceptual$n[7]` compression, and `r n_conditions_perceptual$n[8]` massage. Global grand mean estimates for both predicted values and contrasts against the reference condition of non-intervention control are shown in @fig-perceptual. Across all modalities perceptual outcomes had recovered to pre-exercise values from ~72-120 hours post-exercise with no modality resulting in clearly better recovery compared to non-intervention controls.
+
+```{r}
+targets::tar_load(perceptual_plot)
+```
+
+```{r}
+#| label: fig-perceptual
+#| fig-width: 10
+#| fig-height: 6
+#| fig-cap: Global grand means for predictions and contrasts from meta-analysis of perceptual outcomes across recovery modality conditions over time post-exercise. Left panel shows predicted values for fatigue and subsequent recovery, right panel shows the comparison of fatigue/recovery between each recovery modality and non-intervention controls.
+
+perceptual_plot
+
+```
+
+# References
