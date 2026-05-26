@@ -32,6 +32,21 @@ As noted in the pre-registration, given we did not know ahead of time what funct
 Results are presented as the global grand mean predicted values over time for the ranges over which observations were present within each modality. In addition, we focus on the comparisons between the different recovery modalities in comparison to the reference of non-intervention control conditions over time to determine whether any recovery modality outperformed non-intervention controls in terms of recovery. All models were run with 2000 warmup and 6000 sampling iterations across four Monte Carlo Markov Chains. Trace plots were produced along with $\hat{R}$ plots to examine whether chains had converged (all were $\hat{R}<1.05$ and most $\hat{R}<1.01$) in addition to posterior predictive checks to understand the model implied distributions (see [here](https://jamessteeleii.github.io/exercise_recovery_modalities_meta/plots/diagnostic_plots.html)).
 
 # Results
+## Risk of Bias 
+```{r}
+#| label: fig-rob2
+#| fig-width: 10
+#| fig-height: 7.5
+#| fig-cap: Risk of Bias 2.0 summary for independent arm (i.e., between group) studies (top panel) and dependent arm (i.e., crossover) studies (bottom panel).
+ 
+targets::tar_load(rob2_summary_plot)
+
+rob2_summary_plot
+
+```
+
+The summary for the risk of bias assessment can be seen in @fig-rob2. Whilst individual domains typically showed "Low" risk of bias in isolation at least half of all dependent arm studies, and more than half of all independent arm studies, were classified overall as either having "Some concerns" or "High" risk of bias. 
+
 ## Performance Outcomes
 ```{r}
 targets::tar_load(performance_model)
