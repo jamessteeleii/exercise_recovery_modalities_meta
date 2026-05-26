@@ -22,18 +22,27 @@ rhat_perceptual_model|stem|12b19d4236f8e548|fa1c722801fb5ee8|95c159d5ca5fe9b4|-9
 pp_check_perceptual_model|stem|1eecc36dd1391e4f|8b2ccd5d197e40c4|876d5e56f21a18cb|-471112386||t20541.7527090668s|s238200b|238200|qs|local|vector|||1.51||
 biochemical_plot_tiff|stem|0d1d1aff8f39faf0|7337c3bf7967c304|ebee8806b68c7e10|269448676||t20541.7527521509s|s103b|103|qs|local|vector|||3.11|Removed 108 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 108 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 1 row containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
 performance_plot_tiff|stem|84a7881273c4fab5|b8694eeb55485c3e|d102a5a463b4c90d|-183921168||t20541.7527733795s|s103b|103|qs|local|vector|||1.12|Removed 108 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 108 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 1 row containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
+perceptual_plot|stem|69eb53918ec3c020|3b37cc01c450aed8|26c38310bc9c3035|1411894174||t20541.7642751116s|s205497325b|205497325|qs|local|vector|||23.26|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. The `label.size` argument of `geom_label()` is deprecated as of ggplot2 3.5.0. ℹ Please use the `linewidth` argument instead.|
+perceptual_plot_tiff|stem|35e5b11d08b6f437|68ff039811294b1b|37cd171459639c3c|635439331||t20541.7642999881s|s102b|102|qs|local|vector|||1.22|Removed 19 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 18 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 25 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
+rob2_between_file|stem|f2365efde20b58fe|8a1c15bc2e1b7de9|2c530c1562a7fbd1|-520537175|C:/Users/james/Dropbox/Research/PhD Students/Current/Bailey/exercise_recovery_modalities_meta/data/RoB2 Individual.xlsm|t20599.3983308445s|s524657b|524657|file|local|vector|||2.39||
+rob2_within_file|stem|591e50ff95fc975a|ee4a400967dedd7e|2c530c1562a7fbd1|1789151109|C:/Users/james/Dropbox/Research/PhD Students/Current/Bailey/exercise_recovery_modalities_meta/data/RoB2 Repeated.xlsm|t20599.3830635662s|s746074b|746074|file|local|vector|||0||
+rob2_between_data|stem|9bc713584823818b|2e1121566cc2e678|7c6b0c9153e31551|57149666||t20599.4117358067s|s549b|549|qs|local|vector|||0.11||
+rob2_within_data|stem|203c928aa64154bd|eee133cda05b3172|a0281091ae313d63|1435167890||t20599.4117394053s|s591b|591|qs|local|vector|||0.06||
+rob2_summary_plot|stem|41bad3324aa5a2b5|1a4c0a94760c8ac6|79c936376202dc3c|-1790446926||t20599.4117450581s|s347929b|347929|qs|local|vector|||0.15|The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0. ℹ Please use the `linewidth` argument instead.|
+read_rob2_within_data|function|597b0291d355b31a
 plot_biochemical_model|function|2ab60f9e51f5a763
 make_trace_plot|function|accba148807567de
 calculate_effect_sizes_biochemical|function|da34bb972d137968
 make_pp_check|function|c79fbb38cad10d76
 make_rhat_plot|function|ff9978352d799ec0
+read_rob2_between_data|function|9363c05c305020e0
 fit_model_biochemical|function|8d22894116e2ed3a
 calculate_effect_sizes_performance|function|7f4803217726f6bf
 read_prepare_data|function|0927f026fed4ffd5
 plot_performance_model|function|2e4378b331ce7045
 plot_perceptual_model|function|beedfb0ca3f1c691
 fit_model_performance|function|8847121ff8d01502
+plot_rob2_summary|function|4a8c3401640ac1bf
 fit_model_perceptual|function|18380f272f757203
 calculate_effect_sizes_perceptual|function|ebc80a6acf3d5c8b
-perceptual_plot|stem|69eb53918ec3c020|3b37cc01c450aed8|26c38310bc9c3035|1411894174||t20541.7642751116s|s205497325b|205497325|qs|local|vector|||23.26|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. The `label.size` argument of `geom_label()` is deprecated as of ggplot2 3.5.0. ℹ Please use the `linewidth` argument instead.|
-perceptual_plot_tiff|stem|35e5b11d08b6f437|68ff039811294b1b|37cd171459639c3c|635439331||t20541.7642999881s|s102b|102|qs|local|vector|||1.22|Removed 19 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 18 rows containing missing values or values outside the scale range (`geom_line()`).. Removed 25 rows containing missing values or values outside the scale range (`geom_ribbon()`).. Removed 1 row containing missing values or values outside the scale range (`geom_line()`).|
+rob2_summary_plot_tiff|stem|98c1cc19d6c7de5c|e032bedc6bc6818f|db57a67d97e2789b|681406172||t20599.4122336425s|s104b|104|qs|local|vector|||0.7||

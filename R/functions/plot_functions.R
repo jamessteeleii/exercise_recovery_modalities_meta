@@ -542,4 +542,106 @@ plot_perceptual_model <- function(perceptual_model) {
 
 }
 
+plot_rob2_summary <- function(rob2_between_data, rob2_within_data) {
+  
+  summary_rob2_plot_between <- rob2_between_data |>
+    ggplot(
+      aes(
+        x = domain,
+        y = pct,
+        fill = judgement
+      )
+    ) +
+    geom_col(
+      width = 0.7,
+      color = "black",
+      # linewidth = 0.2
+    ) +
+    coord_flip() +
+    scale_y_continuous(
+      labels = scales::percent_format(scale = 1),
+      expand = expansion(mult = c(0, 0.02))
+    ) +
+    scale_x_discrete(limits = rev) +
+    scale_fill_manual(
+      values = c(
+        "Low" = "#02C100",
+        "Some concerns" = "#E2DF07",
+        "High" = "#BF0000"
+      ),
+      breaks = c("Low", "Some concerns", "High")
+    ) +
+    labs(
+      title = "Independent arm studies"
+    ) +
+    theme(axis.title.x = element_blank(), 
+          axis.title.y = element_blank(), axis.ticks.y = element_blank(), 
+          axis.text.y = element_text(size = 10, 
+                                     color = "black"), axis.line.x = element_line(colour = "black", 
+                                                                                  size = 0.5, linetype = "solid"), legend.position = "bottom", 
+          panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(), 
+          panel.background = element_blank(), 
+          legend.background = element_rect(linetype = "solid", 
+                                           colour = "black"), legend.title = element_blank(), 
+          legend.key.size = unit(0.7, "cm"), 
+          legend.text = element_text(size = 8)) + 
+    guides(fill = guide_legend(title = "Risk of bias judgement", 
+                               title.position = "bottom", title.hjust = 0.5, 
+                               reverse = TRUE))
+  
+  
+  summary_rob2_plot_within <- rob2_within_data |>
+    ggplot(
+      aes(
+        x = domain,
+        y = pct,
+        fill = judgement
+      )
+    ) +
+    geom_col(
+      width = 0.7,
+      color = "black",
+      # linewidth = 0.2
+    ) +
+    coord_flip() +
+    scale_y_continuous(
+      labels = scales::percent_format(scale = 1),
+      expand = expansion(mult = c(0, 0.02))
+    ) +
+    scale_x_discrete(limits = rev) +
+    scale_fill_manual(
+      values = c(
+        "Low" = "#02C100",
+        "Some concerns" = "#E2DF07",
+        "High" = "#BF0000"
+      ),
+      breaks = c("Low", "Some concerns", "High")
+    ) +
+    labs(
+      title = "Dependent arm studies"
+    ) +
+    theme(axis.title.x = element_blank(), 
+          axis.title.y = element_blank(), axis.ticks.y = element_blank(), 
+          axis.text.y = element_text(size = 10, 
+                                     color = "black"), axis.line.x = element_line(colour = "black", 
+                                                                                  size = 0.5, linetype = "solid"), legend.position = "bottom", 
+          panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(), 
+          panel.background = element_blank(), 
+          legend.background = element_rect(linetype = "solid", 
+                                           colour = "black"), legend.title = element_blank(), 
+          legend.key.size = unit(0.7, "cm"), 
+          legend.text = element_text(size = 8)) + 
+    guides(fill = guide_legend(title = "Risk of bias judgement", 
+                               title.position = "bottom", title.hjust = 0.5, 
+                               reverse = TRUE))
+  
+  
+  (summary_rob2_plot_between / summary_rob2_plot_within) +
+    plot_annotation(title = "Risk of Bias Summary") +
+    plot_layout(guides = "collect") &
+    theme(legend.position = "bottom")
+}
+
 

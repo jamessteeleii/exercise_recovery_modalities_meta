@@ -277,3 +277,129 @@ calculate_effect_sizes_perceptual <- function(data) {
   return(perceptual_data)
   
 }
+
+read_rob2_between_data <- function(file) {
+  
+  rob2_between <- readxl::read_excel(file, sheet = 3, range = "A1:V131") |>
+    clean_names() |>
+    select(unique_id, 
+           randomization_process, 
+           deviations_from_intended_interventions,
+           missing_outcome_data,
+           measurement_of_the_outcome,
+           selection_of_the_reported_result,
+           overall_bias,
+           weight)
+  
+  # Summary percentages
+  summary_rob2_between <- rob2_between |>
+    pivot_longer(2:7,
+                 names_to = "domain",
+                 values_to = "judgement") |>
+    group_by(domain, judgement) |>
+    summarise(n = n(), .groups = "drop") |>
+    group_by(domain) |>
+    mutate(
+      pct = n / sum(n) * 100
+    ) |>
+    
+    # Ensure all combinations exist
+    ungroup() |>
+    complete(
+      domain,
+      judgement = c("Low", "Some concerns", "High"),
+      fill = list(n = 0, pct = 0)
+    ) |>
+    
+    mutate(
+      domain = case_when(
+        domain == "randomization_process" ~ "Bias arising from the randomisation process", 
+        domain == "deviations_from_intended_interventions" ~ "Bias due to deviations from intended interventions",
+        domain == "missing_outcome_data" ~ "Bias due to missing outcome data",
+        domain == "measurement_of_the_outcome" ~ "Bias due to measurement of the outcome",
+        domain == "selection_of_the_reported_result" ~ "Bias due to selection of the reported result",
+        domain == "overall_bias" ~ "Overall bias"
+      ),
+      domain = factor(domain, 
+                      levels = c(
+                        "Bias arising from the randomisation process", 
+                        "Bias due to deviations from intended interventions",
+                        "Bias due to missing outcome data",
+                        "Bias due to measurement of the outcome",
+                        "Bias due to selection of the reported result",
+                        "Overall bias"
+                      )),
+      judgement = factor(judgement,
+                         levels = c(
+                           "High",
+                           "Some concerns",
+                           "Low"
+                         ))
+    )
+  
+}
+
+
+read_rob2_within_data <- function(file) {
+  
+  rob2_within <- readxl::read_excel("data/RoB2 Repeated.xlsm", sheet = 3, range = "A1:X93") |>
+    clean_names() |>
+    select(unique_id, 
+           randomization_process, 
+           bias_arising_from_period_and_carryover_effects,
+           deviations_from_intended_interventions,
+           missing_outcome_data,
+           measurement_of_the_outcome,
+           selection_of_the_reported_result,
+           overall_bias,
+           weight)
+  
+  # Summary percentages
+  summary_rob2_within <- rob2_within |>
+    pivot_longer(2:8,
+                 names_to = "domain",
+                 values_to = "judgement") |>
+    group_by(domain, judgement) |>
+    summarise(n = n(), .groups = "drop") |>
+    group_by(domain) |>
+    mutate(
+      pct = n / sum(n) * 100
+    ) |>
+    
+    # Ensure all combinations exist
+    ungroup() |>
+    complete(
+      domain,
+      judgement = c("Low", "Some concerns", "High"),
+      fill = list(n = 0, pct = 0)
+    ) |>
+    
+    mutate(
+      domain = case_when(
+        domain == "randomization_process" ~ "Bias arising from the randomisation process", 
+        domain == "bias_arising_from_period_and_carryover_effects" ~ "Bias arising from period and carryover effects",
+        domain == "deviations_from_intended_interventions" ~ "Bias due to deviations from intended interventions",
+        domain == "missing_outcome_data" ~ "Bias due to missing outcome data",
+        domain == "measurement_of_the_outcome" ~ "Bias due to measurement of the outcome",
+        domain == "selection_of_the_reported_result" ~ "Bias due to selection of the reported result",
+        domain == "overall_bias" ~ "Overall bias"
+      ),
+      domain = factor(domain, 
+                      levels = c(
+                        "Bias arising from the randomisation process", 
+                        "Bias arising from period and carryover effects",
+                        "Bias due to deviations from intended interventions",
+                        "Bias due to missing outcome data",
+                        "Bias due to measurement of the outcome",
+                        "Bias due to selection of the reported result",
+                        "Overall bias"
+                      )),
+      judgement = factor(judgement,
+                         levels = c(
+                           "High",
+                           "Some concerns",
+                           "Low"
+                         ))
+    )
+  
+}

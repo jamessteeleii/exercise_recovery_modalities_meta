@@ -11,6 +11,7 @@ library(targets)
 tar_option_set(
   packages = c(
     "tidyverse",
+    "janitor",
     "here",
     "metafor",
     "brms",
@@ -57,6 +58,28 @@ list(
   tar_target(
     perceptual_data,
     calculate_effect_sizes_perceptual(all_data_prepared)
+  ),
+  
+  tar_target(
+    rob2_between_file,
+    here("data", "RoB2 Individual.xlsm"),
+    format = "file"
+  ),
+  
+  tar_target(
+    rob2_between_data,
+    read_rob2_between_data(rob2_between_file)
+  ),
+  
+  tar_target(
+    rob2_within_file,
+    here("data", "RoB2 Repeated.xlsm"),
+    format = "file"
+  ),
+  
+  tar_target(
+    rob2_within_data,
+    read_rob2_within_data(rob2_within_file)
   ),
   
   #### Fit models ----
@@ -174,5 +197,21 @@ list(
       ggsave(plot = perceptual_plot, filename = "plots/perceptual_plot.tiff", device = "tiff", dpi = 300, width = 10, height = 6)
       
     }
+  ),
+  
+  tar_target(
+    rob2_summary_plot,
+    plot_rob2_summary(rob2_between_data, rob2_within_data)
+  ),
+
+  tar_target(
+    rob2_summary_plot_tiff,
+    {
+      rob2_summary_plot
+
+      ggsave(plot = rob2_summary_plot, filename = "plots/rob2_summary_plot.tiff", device = "tiff", dpi = 300, width = 10, height = 7.5)
+
+    }
   )
+  
 )
