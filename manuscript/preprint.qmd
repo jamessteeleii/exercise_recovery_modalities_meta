@@ -186,7 +186,9 @@ The dominant factor in recovery appears to be time rather than any single interv
 
 ## Conflicts of Interest {.unnumbered}
 
-This review was conducted by BC as part of a PhD thesis funded by Hytro, a recovery technology company. Although none of the studies included in this review directly investigated Hytro products, two authors (TB and WB) have affiliations with Hytro; WB is a co-founder of Hytro, and TB serves as Chief Scientific Officer. No additional funding was received for the conduct of this review.
+This review was conducted by BC as part of a PhD thesis funded by Hytro, a recovery technology company. Although none of the studies included in this review directly investigated Hytro products, two authors (TB and WB) have affiliations with Hytro; WB is a co-founder of Hytro, and TB serves as Chief Scientific Officer. JS is currently contracted by MacroFactor, a company that produces a nutrition-tracking app, and by the MacroFactor Foundation. He has also received travel expenses and honoraria for speaking from fit20 International, Exercise School Portugal, and Discover Strength, and provides research consultancy through his company Steele Research Limited. A full declaration of interest for JS is available through his website ([https://steele-research.com/declaration-of-interests/](https://steele-research.com/declaration-of-interests/)).
+
+No additional funding was received for the conduct of this review nor are there any other conflicts of interest to declare.
 
 ## Data and Code Availability {.unnumbered}
 
